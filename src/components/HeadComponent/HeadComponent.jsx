@@ -1,7 +1,20 @@
 import React from 'react'
 import {Helmet} from 'react-helmet'
 import '../../global.css'
+import WebFont from 'webfontloader'
 function HeadComponent() {
+
+    React.useEffect(() => {
+        WebFont.load({
+          google: {
+            families: [
+              'Montserrat:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic',
+              'Sora:100,200,300,regular,500,600,700,800',
+            ],
+          },
+        });
+      }, []);
+
   return (
     <Helmet>
         <meta charset="utf-8" />
@@ -54,34 +67,34 @@ function HeadComponent() {
       type="text/javascript"
     ></script>
     {/* <script type="text/javascript">
-      WebFont.load({
+    {  `WebFont.load({
         google: {
           families: [
             "Montserrat:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic",
             "Sora:100,200,300,regular,500,600,700,800",
           ],
         },
-      });
+      });`}
     </script> */}
     <script
       src="https://use.typekit.net/qco7rai.js"
       type="text/javascript"
     ></script>
-    {/* <script type="text/javascript">
-      try {
+    <script type="text/javascript">
+     {` try {
         Typekit.load();
-      } catch (e) {}
-    </script> */}
-    {/* <script type="text/javascript">
-      !(function (o, c) {
+      } catch (e) {}`}
+    </script>
+    <script type="text/javascript">
+   {`   !(function (o, c) {
         var n = c.documentElement,
           t = " w-mod-";
         (n.className += t + "js"),
           ("ontouchstart" in o ||
             (o.DocumentTouch && c instanceof DocumentTouch)) &&
             (n.className += t + "touch");
-      })(window, document);
-    </script> */}
+      })(window, document);`}
+    </script>
     <link
       href="https://cdn.prod.website-files.com/64081b3f2fda69c80b5566e5/649a7faa42bc962c81b8c90f_Schbang%20Logomark%20(Custom)%20(1).png"
       rel="shortcut icon"
@@ -92,8 +105,8 @@ function HeadComponent() {
       rel="apple-touch-icon"
     />
     {/* <!-- Facebook Pixel Code --> */}
-    {/* <script>
-      !(function (f, b, e, v, n, t, s) {
+    <script>
+      {`!(function (f, b, e, v, n, t, s) {
         if (f.fbq) return;
         n = f.fbq = function () {
           n.callMethod
@@ -117,17 +130,17 @@ function HeadComponent() {
         "https://connect.facebook.net/en_US/fbevents.js"
       );
       fbq("init", "428538613981080");
-      fbq("track", "PageView");
-    </script> */}
-    {/* <noscript>
-      <img
+      fbq("track", "PageView");`}
+    </script>
+    <noscript>
+     {` <img
         height="1"
         width="1"
         style="display: none"
         src="https://www.facebook.com/tr?id=428538613981080&ev=PageView&noscript=1"
-      />
+      />`}
     </noscript>
-    <!-- End Facebook Pixel Code --> */}
+    {/* <!-- End Facebook Pixel Code --> */}
 
     {/* <!-- Google tag (gtag.js) --> */}
     <script
